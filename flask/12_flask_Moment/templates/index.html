@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% block head %}
+  <title>
+    {% block title %}
+        
+    {% endblock %}
+  </title>
+    {% block links %}
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    {% endblock %}
+
+    {% block scripts %}
+      <script type="text/javasript" src="{{ url_for('static', filename='js/style.js') }}"></script> 
+      {{ moment.include_moment() }}
+    {% endblock %}
+
+    <style type="text/css"></style>
+  {% endblock %}
+</head>
+<body>
+{% block header %} {% endblock %}
+{% block content %} 
+  <p>当地时间: {{ moment(current_time).format('LLL') }} </p>
+  <p>时间戳: {{ moment(current_time).fromNow(refresh=1/3600) }}</p>
+{% endblock %}
+{% block footer %} {% endblock %}
+</body>
+</html>

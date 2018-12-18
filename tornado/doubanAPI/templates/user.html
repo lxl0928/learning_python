@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>豆瓣用户信息查询</title> 
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+  </head>
+<body>
+    <div class="row">
+          <form class="form text-center">
+            <input type="text" name="q">
+            <button class="btn btn-primary" type="submit">提交</button>
+          </form>
+      <div class="col-md-12">
+        {% if users is None %}
+          <h1 class="text-center">请输入搜索文本！</h1>
+        {% else %}
+        <table class="table">
+          <thead>
+            <tr>
+              <td>uid</td>
+              <td>name</td>
+              <td>created</td>
+              <td>alt</td>
+              <td>avatar</td>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+              <tr>
+                <td>{{ user["uid"] }}</td>
+                <td>{{ user["name"] }}</td>
+                <td>{{ user["created"] }}</td>
+                <td><a href="{{ user["alt"] }}" target="_blank">{{ user["alt"] }}</a></td>
+                <td><img src="{{  user['avatar'] }}"></td>
+              </tr>
+            {% end %}
+          </tbody>
+        </table>
+        {% end %}
+      </div>
+    </div>
+  </body>
+</html>

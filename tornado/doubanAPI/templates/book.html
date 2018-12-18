@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>豆瓣书籍信息查询</title>
+<link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="row">
+  <form class="form text-center">
+    <input type="text" name="q">
+    <button class = "btn btn-success" type="submit">搜索</button>
+</form>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    {% if books is None %}
+      <h1 class="text-center">请输入将要搜索的书籍相关信息</h1>
+    {% else %}
+    <table class="table">
+      <thead>
+        <tr>
+          <td>书名</td>
+          <td>id</td>
+          <td>作者</td>
+          <td>价格</td>
+          
+          <!--<td>标签</td>-->
+          <td>alt</td>
+          <td>封面图片</td>
+        </tr>
+      </thead>
+      <tbody>
+      
+      {% for book in books %}
+        <tr>
+          <td>{{ book["title"] }}</td>
+          <td>{{ book["id"] }}</td>
+          <td>{{ book["author"] }}</td>
+          <td>{{ book["price"] }}</td>
+          <td><a href="{{ book["alt"] }}" target="_blank">{{ book["alt"] }}</a></td>
+          <td><img src="{{ book["image"] }}"></td>
+        </tr>
+        {% end %}
+      </tbody>
+    </table>
+    {% end %}
+  </div>
+</div>
+</body>
+</html>

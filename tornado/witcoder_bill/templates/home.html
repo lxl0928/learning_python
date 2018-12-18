@@ -1,0 +1,61 @@
+!<DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <nav class="navbar nabvbar-default navbar-fixed-top" >
+      <div class="container text-center">
+        <h3>Witcoder账单管理系统</h3>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption text-center">
+              <h3>总金额预览</h3>
+              <p>金额总数: {{ total_amount }}</p>
+              <p>消费金额: {{ consumption_amount }}</p>
+              <p>剩余金额: {{ residual_amount }}</p>
+              <p><a href="#" class="btn btn-success" role="button">账单详情</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption text-center">
+              <h3>唐健云</h3>
+              <p>消费金额: {{ tjy_amount }}</p>
+              <p><a href="#" class="btn btn-success" role="button">账单详情</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption text-center">
+              <h3>廖玉梅</h3>
+              <p>消费金额: {{ lym_amount }}</p>
+              <p><a href="#" class="btn btn-success" role="button">账单详情</a></p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <footer class="">
+      <div class="container text-center">
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+    </footer>
+  </body>
+</html>
